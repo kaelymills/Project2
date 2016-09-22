@@ -49,5 +49,32 @@
 </footer>
 
 	</div>
+  <script>
+   $('#search').on("click", function() {
+
+      /*
+       * Properties of this JSON object MUST match the backend API.
+       */
+
+      var parameters = {
+          name: $("#").val().trim();
+          phoneNumber: $("#").val().trim(),
+          email: $("#").val().trim(),
+          partySize: $("#").val().trim()
+      };
+
+      url = "http://localhost:3000/new?";
+
+      console.log(url + $.param(parameters));
+
+      var currentURL = window.location.origin;
+
+      // Question: What does this code do??
+      $.post(currentURL + '/api/reservation/new', parameters)
+          .done(function (data) {
+          console.log(data);
+          alert('Adding reservation...');
+      });
+  </script>
 </body>
 </html>
