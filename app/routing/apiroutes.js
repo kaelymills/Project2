@@ -10,10 +10,10 @@ module.exports = function(expressApp) {
 
 	expressApp.post('/api/reservation/new', function(req, res) {
 		console.log(
-		req.body.name + " "
-		req.body.email + " "
-		req.body.partySize + " "
-		req.body.phoneNumber
+			req.body.name + " " 
+			+ req.body.email + " " 
+			+ req.body.partySize + " "
+			+ req.body.phoneNumber
 		);
 		//if currentReservations > numberOfTables {
 			//add new reservation object to waitlist;
